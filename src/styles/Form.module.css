@@ -1,0 +1,85 @@
+.ccForm {
+  margin-top: 1.5em;
+  padding: 2.5em 1.25em;
+}
+
+.ccForm label {
+  display: block;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  color: hsl(278, 68%, 11%);
+  font-weight: 700;
+  margin-bottom: 0.45rem;
+}
+
+.ccForm input {
+  box-sizing: border-box;
+  width: 100%;
+  font-family: inherit;
+  font-weight: 500;
+  border: 1px solid hsl(270, 3%, 87%);
+  padding: 0.75em;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+}
+
+.ccForm input:invalid {
+  border-color: hsl(0, 100%, 40%);
+}
+
+.ccForm input:focus {
+  outline: none;
+  border-top-color: hsl(249, 99%, 64%);
+  border-left-color: hsl(249, 99%, 64%);
+  border-right-color: hsl(278, 94%, 30%);
+  border-bottom-color: hsl(278, 94%, 30%);
+}
+
+.ccForm input::placeholder {
+  color: hsl(264, 5%, 80%);
+}
+
+.submitButton {
+  width: 100%;
+  color: white;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 1em;
+  padding: 0.75em;
+  margin-top: 1rem;
+  background-color: hsl(278, 68%, 11%);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.flexContainer {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.expDate,
+.cvc {
+  flex: 1;
+}
+
+.expDate {
+  flex: 0.75;
+}
+
+.cvc {
+  flex: 1.25;
+  margin-left: 0.25rem;
+}
+
+.expDate input {
+  width: 4rem;
+}
+
+.error {
+  margin-top: -0.75rem;
+  margin-bottom: 1rem;
+  font-size: 0.65em;
+  font-weight: 700;
+  color: hsl(0, 100%, 66%);
+}

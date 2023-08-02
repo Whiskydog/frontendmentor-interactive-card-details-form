@@ -1,0 +1,60 @@
+.card {
+  background: center / cover no-repeat
+    url("../assets/images/bg-main-mobile.png");
+  height: 240px;
+}
+
+.cardholderName,
+.cardExpiryDate,
+.cardCvc {
+  letter-spacing: 1px;
+  font-size: 0.55em;
+}
+
+.cardNumber {
+  margin-bottom: 1em;
+  letter-spacing: 2px;
+}
+
+.cardFace {
+  position: absolute;
+  margin: 0;
+  width: 285px;
+  height: 157px;
+  color: white;
+}
+
+.cardBack {
+  composes: cardFace;
+  top: 32px;
+  right: 1em;
+  background: center / contain no-repeat
+    url("../assets/images/bg-card-back.png");
+}
+
+.cardCvc {
+  display: inline;
+  position: absolute;
+  top: 71px;
+  right: 32px;
+}
+
+.cardFront {
+  composes: cardFace;
+  top: 120px;
+  left: 1em;
+  box-sizing: border-box;
+  padding: 1em 1.3em;
+  background: center / contain no-repeat
+    url("../assets/images/bg-card-front.png");
+}
+
+.cardLogo {
+  height: 30px;
+  margin-bottom: 1.75em;
+}
+
+.cardBottomRow {
+  display: flex;
+  justify-content: space-between;
+}
