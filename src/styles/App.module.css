@@ -2,3 +2,9 @@
   max-height: 240px;
   object-fit: cover;
 }
+
+@media all and (min-width: 1200px) {
+  .banner {
+    min-height: 100%;
+  }
+}

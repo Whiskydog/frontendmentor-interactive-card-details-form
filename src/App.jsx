@@ -28,7 +28,7 @@ export default function App() {
       <img
         className={style.banner}
         src={bgMainMobile}
-        sizes="(min-width: 400px) 483px, 375px"
+        sizes="(min-width: 1200px) 483px, 375px"
         srcSet={`${bgMainMobile} 375w, ${bgMainDesktop} 483w`}
       />
       <Card cardData={watch()} />

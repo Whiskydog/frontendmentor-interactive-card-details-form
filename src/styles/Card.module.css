@@ -11,18 +11,18 @@
 .cardExpiryDate,
 .cardCvc {
   letter-spacing: 1px;
-  font-size: 0.55em;
+  font-size: 0.5em;
 }
 
 .cardNumber {
-  margin-bottom: 1em;
+  margin-bottom: 1.2em;
   letter-spacing: 2px;
 }
 
 .cardFace {
   margin: 0;
-  width: 285px;
-  height: 157px;
+  width: 18rem;
+  height: 10rem;
   color: white;
 }
 
@@ -36,8 +36,8 @@
 .cardCvc {
   display: inline;
   position: relative;
-  top: 62px;
-  left: 232px;
+  top: 7.1em;
+  left: 25.5em;
 }
 
 .cardFront {
@@ -56,4 +56,39 @@
 .cardBottomRow {
   display: flex;
   justify-content: space-between;
+}
+
+@media all and (min-width: 1200px) {
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    top: 0;
+    bottom: 0;
+    margin: 0 10rem;
+  }
+
+  .cardLogo {
+    height: auto;
+  }
+
+  .cardCvc {
+    top: 6.5em;
+    left: 24.5em;
+  }
+
+  .cardFace {
+    width: 28rem;
+    height: 15rem;
+    font-size: 1.8rem;
+  }
+
+  .cardBack {
+    order: 1;
+  }
+
+  .cardFront {
+    margin-top: 0;
+  }
 }

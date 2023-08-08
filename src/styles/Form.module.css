@@ -3,6 +3,7 @@
   margin: auto;
   margin-top: 1.5em;
   padding: 2.5em 1.25em;
+  max-width: 24rem;
 }
 
 .ccForm label {
@@ -86,4 +87,11 @@
   font-size: 0.65em;
   font-weight: 700;
   color: hsl(0, 100%, 66%);
+}
+
+@media all and (min-width: 1200px) {
+  .ccForm {
+    margin-top: auto;
+    margin-left: 30%;
+  }
 }
