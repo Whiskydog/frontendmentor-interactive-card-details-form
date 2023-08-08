@@ -1,7 +1,10 @@
 .card {
-  background: center / cover no-repeat
-    url("../assets/images/bg-main-mobile.png");
-  height: 240px;
+  width: fit-content;
+  position: absolute;
+  top: 32px;
+  left: 0;
+  right: 0;
+  margin: auto;
 }
 
 .cardholderName,
@@ -17,7 +20,6 @@
 }
 
 .cardFace {
-  position: absolute;
   margin: 0;
   width: 285px;
   height: 157px;
@@ -26,24 +28,21 @@
 
 .cardBack {
   composes: cardFace;
-  top: 32px;
-  right: 1em;
+  margin-left: 52px;
   background: center / contain no-repeat
     url("../assets/images/bg-card-back.png");
 }
 
 .cardCvc {
   display: inline;
-  position: absolute;
-  top: 71px;
-  right: 32px;
+  position: relative;
+  top: 62px;
+  left: 232px;
 }
 
 .cardFront {
   composes: cardFace;
-  top: 120px;
-  left: 1em;
-  box-sizing: border-box;
+  margin-top: -69px;
   padding: 1em 1.3em;
   background: center / contain no-repeat
     url("../assets/images/bg-card-front.png");

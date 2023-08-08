@@ -47,6 +47,7 @@ export default function Form({ handleSubmit, control, errors, register }) {
         onBlur={cardNumberField.onBlur}
         value={cardNumberField.value}
         ref={cardNumberField.ref}
+        inputMode="numeric"
         placeholder="e.g. 1234 5678 9123 0000"
       />
       {cardNumberError && (
@@ -63,6 +64,7 @@ export default function Form({ handleSubmit, control, errors, register }) {
                 max: { value: 12, message: "Invalid date" },
                 required: "Can't be blank",
               })}
+              inputMode="numeric"
               placeholder="MM"
             />
             <input
@@ -78,6 +80,7 @@ export default function Form({ handleSubmit, control, errors, register }) {
                   message: "Invalid date",
                 },
               })}
+              inputMode="numeric"
               placeholder="YY"
             />
           </div>
@@ -103,6 +106,7 @@ export default function Form({ handleSubmit, control, errors, register }) {
               },
               required: "Can't be blank",
             })}
+            inputMode="numeric"
             placeholder="e.g. 123"
           />
           {errors.cvc && <p className={style.error}>{errors.cvc.message}</p>}

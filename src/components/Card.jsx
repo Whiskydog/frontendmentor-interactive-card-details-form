@@ -3,7 +3,7 @@ import style from "../styles/Card.module.css";
 
 export default function Card({ cardData }) {
   return (
-    <section className={style.card}>
+    <div className={style.card}>
       <div className={style.cardBack}>
         <h3 className={style.cardCvc}>{cardData?.cvc || "000"}</h3>
       </div>
@@ -21,6 +21,6 @@ export default function Card({ cardData }) {
           </h3>
         </div>
       </div>
-    </section>
+    </div>
   );
 }
