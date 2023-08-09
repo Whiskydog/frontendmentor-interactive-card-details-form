@@ -1,8 +1,16 @@
 import { useController } from "react-hook-form";
 import { formatCardNumber } from "./utils/formatter";
 import style from "./styles/Form.module.css";
+import { useState } from "react";
+import iconComplete from "./assets/images/icon-complete.svg";
 
-export default function Form({ handleSubmit, control, errors, register }) {
+export default function Form({
+  handleSubmit,
+  control,
+  errors,
+  register,
+  reset,
+}) {
   const {
     field: cardNumberField,
     fieldState: { error: cardNumberError },
@@ -21,11 +29,31 @@ export default function Form({ handleSubmit, control, errors, register }) {
       },
     },
   });
+  const [isComplete, setIsComplete] = useState(false);
 
   function onSubmit(data, event) {
     event.preventDefault();
+    // Send data to backend 👇
     console.log(data);
+    setIsComplete(true);
   }
+
+  function handleContinue() {
+    setIsComplete(false);
+    reset();
+  }
+
+  if (isComplete)
+    return (
+      <div className={style.complete}>
+        <img src={iconComplete} className={style.icon} />
+        <h1 className={style.thankYou}>THANK YOU!</h1>
+        <p className={style.msg}>We&apos;ve added your card details</p>
+        <button onClick={handleContinue} className={style.continueBtn}>
+          Continue
+        </button>
+      </div>
+    );
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={style.ccForm}>
@@ -64,6 +92,7 @@ export default function Form({ handleSubmit, control, errors, register }) {
                 max: { value: 12, message: "Invalid date" },
                 required: "Can't be blank",
               })}
+              maxLength={2}
               inputMode="numeric"
               placeholder="MM"
             />
@@ -80,6 +109,7 @@ export default function Form({ handleSubmit, control, errors, register }) {
                   message: "Invalid date",
                 },
               })}
+              maxLength={2}
               inputMode="numeric"
               placeholder="YY"
             />
@@ -100,19 +130,16 @@ export default function Form({ handleSubmit, control, errors, register }) {
                 value: /[0-9]{3}/,
                 message: "Must be 3 digits",
               },
-              maxLength: {
-                value: 3,
-                message: "Must be 3 digits",
-              },
               required: "Can't be blank",
             })}
+            maxLength={3}
             inputMode="numeric"
             placeholder="e.g. 123"
           />
           {errors.cvc && <p className={style.error}>{errors.cvc.message}</p>}
         </div>
       </div>
-      <button className={style.submitButton}>Confirm</button>
+      <button className={style.btn}>Confirm</button>
     </form>
   );
 }

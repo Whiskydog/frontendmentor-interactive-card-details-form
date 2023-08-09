@@ -1,9 +1,8 @@
 .ccForm {
   max-width: 24rem;
   margin: auto;
-  margin-top: 1.5em;
+  margin-top: 2.5em;
   padding: 2.5em 1.25em;
-  max-width: 24rem;
 }
 
 .ccForm label {
@@ -40,7 +39,7 @@
   color: hsl(264, 5%, 80%);
 }
 
-.submitButton {
+.btn {
   width: 100%;
   color: white;
   font-weight: 700;
@@ -54,7 +53,7 @@
   transition: background-color 0.25s;
 }
 
-.submitButton:hover {
+.btn:hover {
   background-color: hsl(278, 68%, 20%);
 }
 
@@ -89,9 +88,43 @@
   color: hsl(0, 100%, 66%);
 }
 
+.complete {
+  text-align: center;
+  max-width: 24rem;
+  margin: 6rem auto;
+}
+
+.icon {
+  margin: 0 auto;
+}
+
+.thankYou {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  letter-spacing: 4px;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.msg {
+  color: hsl(279, 6%, 55%);
+  margin-top: 0;
+  font-weight: 500;
+}
+
+.continueBtn {
+  composes: btn;
+  width: 20rem;
+}
+
 @media all and (min-width: 1200px) {
   .ccForm {
     margin-top: auto;
-    margin-left: 30%;
+    margin-left: 28%;
+  }
+
+  .complete {
+    margin: auto;
+    margin-left: 28%;
   }
 }
