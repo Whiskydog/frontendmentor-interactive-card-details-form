@@ -6,5 +6,6 @@
 @media all and (min-width: 1200px) {
   .banner {
     min-height: 100%;
+    width: 483px;
   }
 }
