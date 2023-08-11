@@ -81,10 +81,10 @@ export default function Form({
       {cardNumberError && (
         <p className={style.error}>{cardNumberError.message}</p>
       )}
-      <div className={style.flexContainer}>
+      <div className={style.bottomContainer}>
         <div className={style.expDate}>
           <label htmlFor="card-exp-month">EXP. DATE (MM/YY)</label>
-          <div className={style.flexContainer}>
+          <div className={style.flex}>
             <input
               id="card-exp-month"
               {...register("expMonth", {

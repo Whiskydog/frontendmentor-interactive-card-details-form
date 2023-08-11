@@ -5,18 +5,19 @@
   left: 0;
   right: 0;
   margin: auto;
+  letter-spacing: 2px;
 }
 
 .cardholderName,
 .cardExpiryDate,
 .cardCvc {
-  letter-spacing: 1px;
-  font-size: 0.5em;
+  font-size: 0.65em;
 }
 
 .cardNumber {
-  margin-bottom: 1.2em;
-  letter-spacing: 2px;
+  margin-bottom: 1em;
+  letter-spacing: 3px;
+  font-variant-numeric: tabular-nums;
 }
 
 .cardFace {
@@ -24,6 +25,7 @@
   width: 18rem;
   height: 10rem;
   color: white;
+  border-radius: 0.75rem;
 }
 
 .cardBack {
@@ -35,21 +37,21 @@
 .cardCvc {
   display: inline;
   position: relative;
-  top: 7.1em;
-  left: 25.5em;
+  top: 4.1rem;
+  left: 14rem;
 }
 
 .cardFront {
   composes: cardFace;
   margin-top: -69px;
-  padding: 1em 1.3em;
-  box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.12);
+  padding: 1em;
+  box-shadow: 0px 8px 70px rgba(0, 0, 0, 0.25);
   background: center / cover no-repeat url("../assets/images/bg-card-front.png");
 }
 
 .cardLogo {
   height: 30px;
-  margin-bottom: 1.75em;
+  margin-bottom: 2em;
 }
 
 .cardBottomRow {
@@ -62,10 +64,17 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 2rem;
+    gap: 2.5rem;
     top: 0;
     bottom: 0;
-    margin: 0 13rem;
+    margin: 0 10rem;
+    letter-spacing: 3px;
+  }
+
+  .cardholderName,
+  .cardExpiryDate,
+  .cardCvc {
+    font-size: 0.45em;
   }
 
   .cardLogo {
@@ -73,22 +82,29 @@
   }
 
   .cardCvc {
-    top: 6.55em;
-    left: 24.5em;
+    top: 5.9rem;
+    left: 22.25rem;
   }
 
   .cardFace {
     width: 28rem;
     height: 15rem;
-    font-size: 1.8rem;
+    font-size: 1.75rem;
   }
 
   .cardBack {
     order: 1;
-    box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.12);
+    margin-left: 6rem;
+    box-shadow: inset 0px 0px 8px rgba(0, 0, 0, 0.1),
+      0px 8px 70px rgba(0, 0, 0, 0.12);
   }
 
   .cardFront {
+    padding: 2rem;
     margin-top: 0;
+  }
+
+  .cardNumber {
+    letter-spacing: 3.8px;
   }
 }
