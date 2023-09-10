@@ -10,6 +10,7 @@ export default function App() {
     watch,
     register,
     reset,
+    setValue,
     control,
     formState: { errors },
     handleSubmit,
@@ -33,7 +34,7 @@ export default function App() {
         srcSet={`${bgMainMobile} 375w, ${bgMainDesktop} 483w`}
       />
       <Card cardData={watch()} />
-      <Form {...{ handleSubmit, control, errors, register, reset }} />
+      <Form {...{ handleSubmit, control, errors, register, reset, setValue }} />
     </main>
   );
 }
