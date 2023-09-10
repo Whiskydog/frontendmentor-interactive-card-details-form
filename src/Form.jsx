@@ -1,7 +1,7 @@
 import { useController } from "react-hook-form";
 import { formatCardNumber } from "./utils/formatter";
 import style from "./styles/Form.module.css";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import iconComplete from "./assets/images/icon-complete.svg";
 
 export default function Form({
@@ -9,6 +9,7 @@ export default function Form({
   control,
   errors,
   register,
+  setValue,
   reset,
 }) {
   const {
@@ -43,6 +44,18 @@ export default function Form({
     reset();
   }
 
+  const handleCardNumberBackspace = useCallback((e) => {
+    const deleteIfLastLetterIsSpace = () => {
+      const cardNumber = e.target.value || '';
+      const lastLetter = cardNumber[cardNumber.length - 1];
+      if (lastLetter !== ' ') return;
+  
+      setValue('number', cardNumber.substring(0, cardNumber.length - 1));
+    };
+
+    if (e.key !== 'Backspace') return; deleteIfLastLetterIsSpace();
+  }, [setValue]);
+
   if (isComplete)
     return (
       <div className={style.complete}>
@@ -73,6 +86,7 @@ export default function Form({
           cardNumberField.onChange(formatCardNumber(e.target.value));
         }}
         onBlur={cardNumberField.onBlur}
+        onKeyDown={handleCardNumberBackspace}
         value={cardNumberField.value}
         ref={cardNumberField.ref}
         inputMode="numeric"
